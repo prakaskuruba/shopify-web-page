@@ -1,0 +1,103 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding: 20px;
+    background-color:black;
+}
+h1 {
+    color:#ffffff;
+    font-family:"playserif display";
+    
+}
+h2 {
+    margin: 20px 0;
+    color: #ffffff;
+    font-family:"caveat";
+}
+
+/* Card Styles */
+.card {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9; /* Maintain a 16:9 aspect ratio */
+    object-fit: cover;  /* Ensure the image covers the area without distortion */
+}
+
+.card-body {
+    padding: 15px;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 1.25em;
+    margin: 10px 0;
+    color: #495057;
+}
+
+.card-text {
+    margin: 5px 0;
+}
+
+.product-price {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.product-compare-at-price {
+    text-decoration: line-through;
+    font-size: 1em;
+}
+
+.badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Badge Styles */
+.product-badge {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .card {
+        margin-bottom: 20px;
+    }
+
+    .card-body {
+        text-align: left;
+    }
+}
+
+@media (max-width: 576px) {
+    .col-md-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .card-img-top {
+        height: 150px;
+    }
+}
