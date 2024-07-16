@@ -134,6 +134,7 @@ const data = {
     ]
 };
 
+
 function renderCategories(data) {
     const categoriesContainer = document.getElementById('categories-container');
     categoriesContainer.innerHTML = '';
@@ -201,6 +202,26 @@ function filterCategory(categoryName) {
         categories: data.categories.filter(category => category.category_name === categoryName)
     };
     renderCategories(filteredData);
+}
+
+function search() {
+    const query = document.getElementById('search-input').value.toLowerCase();
+    const filteredCategories = data.categories.map(category => {
+        const filteredProducts = category.category_products.filter(product => {
+            return product.title.toLowerCase().includes(query) ||
+                product.vendor.toLowerCase().includes(query) ||
+                category.category_name.toLowerCase().includes(query);
+        });
+
+        return {
+            category_name: category.category_name,
+            category_products: filteredProducts
+        };
+    }).filter(category => category.category_products.length > 0);
+
+    renderCategories({
+        categories: filteredCategories
+    });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
